@@ -126,7 +126,15 @@ document.querySelector(".b-7").onclick = t7;
 //  4_5_6_7_8_
 // Задача решается с помощью цикла.
 
-function t8() {}
+function t8() {
+  let a81 = document.querySelector(".i-81").value;
+  let a82 = document.querySelector(".i-82").value;
+  let a83 = "";
+  for (i = a81; i <= a82; i++) {
+    a83 += i + "_";
+  }
+  document.querySelector(".out-8").innerHTML = a83;
+}
 
 document.querySelector(".b-8").onclick = t8;
 
@@ -140,7 +148,20 @@ document.querySelector(".b-8").onclick = t8;
 // Задача решается с помощью цикла. Подсказка - вначале делаем проверку, а потом запускаем цикл.
 // цикл - один
 
-function t9() {}
+function t9() {
+  let a91 = document.querySelector(".i-91").value;
+  let a92 = document.querySelector(".i-92").value;
+  if (a91 > a92) {
+    let a9t = a91;
+    a91 = a92;
+    a92 = a9t;
+  }
+  let a93 = "";
+  for (i = a91; i <= a92; i++) {
+    a93 += i + "_";
+  }
+  document.querySelector(".out-9").innerHTML = a93;
+}
 
 document.querySelector(".b-9").onclick = t9;
 
@@ -148,7 +169,13 @@ document.querySelector(".b-9").onclick = t9;
 // Кнопка .b-10 запускает функцию t10. Функция должна выводить в .out-10 четные годы от 1950 до 1970 включительно.
 // Разделитель - знак подчеркивания. Задача решается через цикл, а четность - через шаг (равный 2).
 
-function t10() {}
+function t10() {
+  let a10 = "";
+  for (i = 1950; i <= 1970; i += 2) {
+    a10 += i + "_";
+  }
+  document.querySelector(".out-10").innerHTML = a10;
+}
 
 document.querySelector(".b-10").onclick = t10;
 
@@ -160,7 +187,14 @@ document.querySelector(".b-10").onclick = t10;
 //     В результате должно получиться так:
 //     one_3_4_two_
 
-function t11() {}
+function t11() {
+  let divs11 = document.getElementsByClassName("div-11");
+  let a11 = "";
+  for (i = 0; i < divs11.length; i++) {
+    a11 += divs11[i].textContent + "_";
+  }
+  document.querySelector(".out-11").innerHTML = a11;
+}
 
 document.querySelector(".b-11").onclick = t11;
 
@@ -170,14 +204,24 @@ document.querySelector(".b-11").onclick = t11;
 // перебрать их с помощью цикла. Обращение к div выглядит так elem[i]
 // применить к каждому elem[i].style.background = ‘orange’
 
-function t12() {}
+function t12() {
+  let elem = document.querySelectorAll(".div-12");
+  for (i = 0; i < elem.length; i++) {
+    elem[i].style.background = "orange";
+  }
+}
 
 document.querySelector(".b-12").onclick = t12;
 
 //  Task 13
 // С помощью цикла присвойте всем input .i-13 value равное 1 для первого, 2 для второго и 3 для третьего.
 
-function t13() {}
+function t13() {
+  let a13 = document.querySelectorAll(".i-13");
+  for (i = 0; i < a13.length; i++) {
+    a13[i].value = i + 1;
+  }
+}
 
 document.querySelector(".b-13").onclick = t13;
 
@@ -187,7 +231,16 @@ document.querySelector(".b-13").onclick = t13;
 // перебрать их с помощью цикла. Обращение к элементу выглядит так elem[i]
 // вывести в .out-14 value выбранного. Проверить выбран ли элемент можно с помощью elem[i].checked.
 
-function t14() {}
+function t14() {
+  let elem = document.querySelectorAll(".i-14");
+  let a14;
+  for (i = 0; i < elem.length; i++) {
+    if (elem[i].checked) {
+      a14 = elem[i].value;
+    }
+  }
+  document.querySelector(".out-14").innerHTML = a14;
+}
 
 document.querySelector(".b-14").onclick = t14;
 
@@ -196,6 +249,8 @@ document.querySelector(".b-14").onclick = t14;
 // 10_0_9_1_8_2_7_3_6_4_5_5_4_6_3_7_2_8_1_9_0_10_
 // Подсказка (10 - i) + '_' + i + '_'
 
-function t15() {}
+function t15() {
+  let a15 = "";
+}
 
 document.querySelector(".b-15").onclick = t15;
