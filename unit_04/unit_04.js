@@ -111,35 +111,51 @@ document.querySelector(".b-10").onclick = f10;
 // Task 11
 // При нажатии кнопки .b-11 запускается функция f11. Функция получает цвет из .i-111 и присваивает как value элементу .i-112. Т.е. после нажатия кнопки выбранный цвета в первом и втором input станут одинаковые.
 
-function f11() {}
+function f11() {
+  let a111 = document.querySelector(".i-111").value;
+  document.querySelector(".i-112").value = a111;
+}
 
 document.querySelector(".b-11").onclick = f11;
 
 // Task 12
 // При нажатии кнопки .b-12 запускается функция f12. Функция выводит дату из .i-12 в out-12.
 
-function f12() {}
+function f12() {
+  let a12 = document.querySelector(".i-12").value;
+  document.querySelector(".out-12").textContent = a12;
+}
 
 document.querySelector(".b-12").onclick = f12;
 
 // Task 13
 //  При изменении положения ползунка .i-13 выводите его значение в out-13. Обратите внимание на событие.
 
-function f13() {}
+function f13() {
+  let a13 = document.querySelector(".i-13").value;
+  document.querySelector(".out-13").textContent = a13;
+}
 
 document.querySelector(".i-13").oninput = f13;
 
 // Task 14
 // При нажатии на кнопку выводите текст из textarea .t-14 в .out-14.
 
-function f14() {}
+function f14() {
+  let a14 = document.querySelector(".t-14").value;
+  document.querySelector(".out-14").textContent = a14;
+}
 
 document.querySelector(".b-14").onclick = f14;
 
 // Task 15
 // При нажатии кнопки .b-15 функция должна выводить текст из .i-15 в textarea .t-15 и в .out-15.
 
-function f15() {}
+function f15() {
+  let a15 = document.querySelector(".i-15").value;
+  document.querySelector(".out-15").textContent = a15;
+  document.querySelector(".t-15").textContent = a15;
+}
 
 document.querySelector(".b-15").onclick = f15;
 
@@ -147,7 +163,8 @@ document.querySelector(".b-15").onclick = f15;
 // При нажатии на кнопку .b-16 выводите в .out-16 value выбранного option из .s-16.
 
 function f16() {
-  // для получения выбранного option просто получите select в переменную и select.value;
+  let a16 = document.querySelector(".s-16").value;
+  document.querySelector(".out-16").textContent = a16;
 }
 
 document.querySelector(".b-16").onclick = f16;
@@ -155,27 +172,39 @@ document.querySelector(".b-16").onclick = f16;
 // Task 17
 // При смене выбранного значения .s-17 выводите в .out-17 value выбранного option из .s-17.
 
-function f17() {}
+function f17() {
+  let a17 = document.querySelector(".s-17").value;
+  document.querySelector(".out-17").textContent = a17;
+}
 
 document.querySelector(".s-17").onchange = f17;
 
 // Task 18
 // При смене выбранного значения в s-18, получайте из него value выбранного option и присвойте данный value в input .i-18.
 
-function f18() {}
+function f18() {
+  let a18 = document.querySelector(".s-18").value;
+  document.querySelector(".i-18").value = a18;
+}
 
 document.querySelector(".s-18").onchange = f18;
 
 // Task 19
 // На странице создан div.out-19. По нажатию кнопки, получите из него текст и присвойте в value элемента .i-19.
 
-function f19() {}
+function f19() {
+  let a19 = document.querySelector(".out-19").textContent;
+  document.querySelector(".i-19").value = a19;
+}
 
 document.querySelector(".b-19").onclick = f19;
 
 // Task 20
 // У вас есть два select. Напишите код, который при изменении select .s-201 будет аналогично изменять выбранный option в .s-202.
 
-function f20() {}
+function f20() {
+  let a201 = document.querySelector(".s-201").value;
+  document.querySelector(".s-202").value = a201;
+}
 
 document.querySelector(".s-201").onchange = f20;
