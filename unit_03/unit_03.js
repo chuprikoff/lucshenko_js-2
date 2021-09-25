@@ -43,7 +43,8 @@ document.querySelector(".b-3").onclick = f3;
 
 function f4() {
   let a4 = document.querySelector(".i-4").value;
-  let result = a4 >= 18;
+  let currentYear = new Date().getFullYear();
+  let result = currentYear - a4 >= 18;
   document.querySelector(".out-4").textContent = +result;
 }
 
