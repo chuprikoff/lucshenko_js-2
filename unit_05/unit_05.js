@@ -251,6 +251,10 @@ document.querySelector(".b-14").onclick = t14;
 
 function t15() {
   let a15 = "";
+  for (i = 0; i <= 10; i++) {
+    a15 += 10 - i + "_" + i + "_";
+  }
+  document.querySelector(".out-15").innerHTML = a15;
 }
 
 document.querySelector(".b-15").onclick = t15;
