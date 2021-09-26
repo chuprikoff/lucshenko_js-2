@@ -30,7 +30,7 @@ document.querySelector(".b-1").onclick = t1;
 function t2() {
   let a2 = "";
   for (i = 1; i <= 3; i++) {
-    a2.innerHTML += `${i}<br>`;
+    a2 += `${i}<br>`;
     for (k = 1; k <= 3; k++) {
       a2 += `_*`;
     }
