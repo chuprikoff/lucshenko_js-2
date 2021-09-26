@@ -127,8 +127,8 @@ document.querySelector(".b-7").onclick = t7;
 // Задача решается с помощью цикла.
 
 function t8() {
-  let a81 = document.querySelector(".i-81").value;
-  let a82 = document.querySelector(".i-82").value;
+  let a81 = +document.querySelector(".i-81").value;
+  let a82 = +document.querySelector(".i-82").value;
   let a83 = "";
   for (i = a81; i <= a82; i++) {
     a83 += i + "_";
@@ -149,8 +149,8 @@ document.querySelector(".b-8").onclick = t8;
 // цикл - один
 
 function t9() {
-  let a91 = document.querySelector(".i-91").value;
-  let a92 = document.querySelector(".i-92").value;
+  let a91 = +document.querySelector(".i-91").value;
+  let a92 = +document.querySelector(".i-92").value;
   if (a91 > a92) {
     let a9t = a91;
     a91 = a92;
