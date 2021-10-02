@@ -32,7 +32,7 @@ function t2() {
   for (i = 1; i <= 3; i++) {
     a2 += `${i}<br>`;
     for (k = 1; k <= 3; k++) {
-      a2 += `_*`;
+      a2 += `*_`;
     }
     a2 += `<br>`;
   }
@@ -201,7 +201,7 @@ document.querySelector(".b-9").onclick = t9;
 function t10() {
   let a10 = "";
   for (i = 0; i < 5; i++) {
-    for (k = 0; k < 11; k++) {
+    for (k = 1; k < 11; k++) {
       if (k < 10 && i == 0) {
         a10 += "0" + (10 * i + k) + "_";
       } else {
