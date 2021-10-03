@@ -110,11 +110,12 @@ document.querySelector(".b-5").onclick = t5;
 function t6() {
   let a6 = "";
   for (l = 1; l <= 3; l++) {
-    for (i = 1; i <= 2; i++) {
-      for (k = 1; k <= 2; k++) {
+    for (k = 1; k <= 6; k++) {
+      if (k % 3 === 0) {
+        a6 += "x";
+      } else {
         a6 += +(k % 2 !== 0);
       }
-      a6 += `x`;
     }
     a6 += `<br>`;
   }
