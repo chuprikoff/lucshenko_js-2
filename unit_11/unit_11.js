@@ -54,6 +54,10 @@ document.querySelector(".b-3").onclick = f3;
 // функция выполняется при нажатии кнопки b-4
 
 function f4() {
+  let i4 = document.querySelector(".i-4").value;
+  d1.push(i4);
+  showArr(".out-4", d1);
+  document.querySelector(".i-4").value = "";
   showArr(".out-4", d1);
 }
 
@@ -64,6 +68,10 @@ document.querySelector(".b-4").onclick = f4;
 // функция выполняется при нажатии кнопки b-5
 
 function f5() {
+  let i5 = document.querySelector(".i-5").value;
+  d1.unshift(i5);
+  showArr(".out-5", d1);
+  document.querySelector(".i-5").value = "";
   showArr(".out-5", d1);
 }
 
@@ -78,6 +86,10 @@ document.querySelector(".b-5").onclick = f5;
 let d6 = ["test", 5, 12];
 
 function f6() {
+  let i6 = document.querySelector(".i-6").value;
+  d6[d6.length] = i6;
+  showArr(".out-6", d1);
+  document.querySelector(".i-6").value = "";
   showArr(".out-6", d6);
 }
 
