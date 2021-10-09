@@ -56,7 +56,6 @@ document.querySelector(".b-3").onclick = f3;
 function f4() {
   let i4 = document.querySelector(".i-4").value;
   d1.push(i4);
-  showArr(".out-4", d1);
   document.querySelector(".i-4").value = "";
   showArr(".out-4", d1);
 }
@@ -70,7 +69,6 @@ document.querySelector(".b-4").onclick = f4;
 function f5() {
   let i5 = document.querySelector(".i-5").value;
   d1.unshift(i5);
-  showArr(".out-5", d1);
   document.querySelector(".i-5").value = "";
   showArr(".out-5", d1);
 }
@@ -88,7 +86,6 @@ let d6 = ["test", 5, 12];
 function f6() {
   let i6 = document.querySelector(".i-6").value;
   d6[d6.length] = i6;
-  showArr(".out-6", d1);
   document.querySelector(".i-6").value = "";
   showArr(".out-6", d6);
 }
@@ -104,6 +101,11 @@ document.querySelector(".b-6").onclick = f6;
 let d7 = ["china", "india", "brazil", "japan", "egypt"];
 
 function f7() {
+  let d7new = [];
+  for (i = 0; i < d7.length - 1; i++) {
+    d7new[i] = d7[i];
+  }
+  d7 = d7new;
   showArr(".out-7", d7);
 }
 
@@ -118,7 +120,14 @@ document.querySelector(".b-7").onclick = f7;
 let d8 = [2, "4", 12, 67, "hello"];
 
 function f8() {
+  let i8 = document.querySelector(".i-8").value;
+  let d8new = [i8];
+  for (i = 0; i < d8.length; i++) {
+    d8new[i + 1] = d8[i];
+  }
+  d8 = d8new;
   showArr(".out-8", d8);
+  document.querySelector(".i-8").value = "";
 }
 
 document.querySelector(".b-8").onclick = f8;
@@ -132,6 +141,11 @@ document.querySelector(".b-8").onclick = f8;
 let d9 = [100, 200, 300, 400, 700, 121];
 
 function f9() {
+  let d9new = [];
+  for (i = 0; i < d9.length - 1; i++) {
+    d9new[i] = d9[i + 1];
+  }
+  d9 = d9new;
   showArr(".out-9", d9);
 }
 
@@ -146,6 +160,7 @@ document.querySelector(".b-9").onclick = f9;
 let d10 = [3, 14, 15, 92, 6];
 
 function f10() {
+  d10.reverse();
   showArr(".out-10", d10);
 }
 
@@ -159,7 +174,10 @@ document.querySelector(".b-10").onclick = f10;
 
 let d11 = [2, 3, 4, 5, 6, 7];
 
-function f11() {}
+function f11() {
+  let i11 = +document.querySelector(".i-11").value;
+  document.querySelector(".out-11").textContent = d11.indexOf(i11);
+}
 
 document.querySelector(".b-11").onclick = f11;
 
@@ -171,7 +189,17 @@ document.querySelector(".b-11").onclick = f11;
 
 let d12 = [6, 62, 60, 70, 1, 5];
 
-function f12() {}
+function f12() {
+  let i12 = +document.querySelector(".i-12").value;
+  let i12_index = -1;
+  for (let i = 0; i < d12.length; i++) {
+    if (d12[i] == i12) {
+      i12_index = i;
+      break;
+    }
+  }
+  document.querySelector(".out-12").textContent = i12_index;
+}
 
 document.querySelector(".b-12").onclick = f12;
 
@@ -184,6 +212,11 @@ document.querySelector(".b-12").onclick = f12;
 let d13 = [6, 0, 22, 1, 4, 76];
 
 function f13() {
+  let d13_rev = [];
+  for (let i = 0; i < d13.length; i++) {
+    d13_rev[i] = d13[d13.length - 1 - i];
+  }
+  d13 = d13_rev;
   showArr(".out-13", d13);
 }
 
@@ -195,10 +228,16 @@ document.querySelector(".b-13").onclick = f13;
 // Вывод - по нажатию кнопки b-14
 // Вывод в out-14
 
-let d14 = [];
+// let d14 = [];
 
 function f14() {
+  let d14 = [];
+  let i14 = +document.querySelector(".i-14").value;
+  for (let i = 0; i < i14; i++) {
+    d14[i] = 1;
+  }
   showArr(".out-14", d14);
+  document.querySelector(".i-14").value = "";
 }
 
 document.querySelector(".b-14").onclick = f14;
@@ -212,7 +251,18 @@ document.querySelector(".b-14").onclick = f14;
 let d15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
 
 function f15() {
+  let i15 = +document.querySelector(".i-15").value;
+  let i15tog = 1;
+  for (let i = 0; i < d15.length; i++) {
+    if (d15[i] == i15) {
+      i15tog = 0;
+    }
+  }
+  if (i15tog) {
+    d15.push(i15);
+  }
   showArr(".out-15", d15);
+  document.querySelector(".i-15").value = "";
 }
 
 document.querySelector(".b-15").onclick = f15;
