@@ -177,6 +177,7 @@ let d11 = [2, 3, 4, 5, 6, 7];
 function f11() {
   let i11 = +document.querySelector(".i-11").value;
   document.querySelector(".out-11").textContent = d11.indexOf(i11);
+  document.querySelector(".i-11").value = "";
 }
 
 document.querySelector(".b-11").onclick = f11;
@@ -199,6 +200,7 @@ function f12() {
     }
   }
   document.querySelector(".out-12").textContent = i12_index;
+  document.querySelector(".i-12").value = "";
 }
 
 document.querySelector(".b-12").onclick = f12;
@@ -278,6 +280,7 @@ let d161 = [5, 6, 7, 8, 9];
 let d162 = [23, 24, 56, 87];
 
 function f16() {
+  d16 = d161.concat(d162);
   showArr(".out-16", d16);
 }
 
@@ -290,10 +293,17 @@ document.querySelector(".b-16").onclick = f16;
 // Вывод в out-17
 
 let d17 = [];
-let d171 = ["a", "b", "c", "d"];
+let d171 = ["a", "b", "c", "d", 0];
 let d172 = [1, 2, 3, 4, 5];
 
 function f17() {
+  for (let i = 0; i < d171.length + d172.length; i++) {
+    if (i < d171.length) {
+      d17[i] = d171[i];
+    } else {
+      d17[i] = d172[i - d171.length];
+    }
+  }
   showArr(".out-17", d17);
 }
 
@@ -307,7 +317,11 @@ document.querySelector(".b-17").onclick = f17;
 
 let d18 = ["b", "c", "45", "e", "z", "y"];
 
-function f18() {}
+function f18() {
+  let i18 = document.querySelector(".i-18").value;
+  document.querySelector(".out-18").textContent = d18.includes(i18);
+  document.querySelector(".i-18").value = "";
+}
 
 document.querySelector(".b-18").onclick = f18;
 
@@ -329,9 +343,16 @@ let d19 = [
   "advance",
   "every",
 ];
-let maxString = "";
 
-function f19() {}
+function f19() {
+  let maxString = d19[0];
+  for (let i = 0; i < d19.length; i++) {
+    if (String(d19[i]).length > String(maxString).length) {
+      maxString = d19[i];
+    }
+  }
+  document.querySelector(".out-19").textContent = maxString;
+}
 
 document.querySelector(".b-19").onclick = f19;
 
@@ -343,6 +364,8 @@ document.querySelector(".b-19").onclick = f19;
 
 let d20 = [4, 5, 6, 7, 8, 9, 10];
 
-function f20() {}
+function f20() {
+  document.querySelector(".out-20").textContent = d20.join("");
+}
 
 document.querySelector(".b-20").onclick = f20;
