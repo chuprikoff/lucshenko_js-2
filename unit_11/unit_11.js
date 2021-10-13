@@ -230,10 +230,10 @@ document.querySelector(".b-13").onclick = f13;
 // Вывод - по нажатию кнопки b-14
 // Вывод в out-14
 
-// let d14 = [];
+let d14 = [];
 
 function f14() {
-  let d14 = [];
+  d14 = [];
   let i14 = +document.querySelector(".i-14").value;
   for (let i = 0; i < i14; i++) {
     d14[i] = 1;
