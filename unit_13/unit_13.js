@@ -135,14 +135,14 @@ let a7 = {
 function f7() {
   let i7 = document.querySelector(".i-7").value;
   if (i7 !== "") {
-    let a72 = 0;
+    let out = 0;
     for (let key in a7) {
       if (i7 == key) {
-        a72 = 1;
+        out = 1;
         break;
       }
     }
-    document.querySelector(".out-7").innerHTML = a72;
+    document.querySelector(".out-7").innerHTML = out;
   }
   document.querySelector(".i-7").value = "";
 }
@@ -155,9 +155,22 @@ document.querySelector(".b-7").onclick = f7;
 let a8 = {
   b: 17,
   e: 22,
+  2: true,
 };
-
-function f8() {}
+function f8() {
+  let i8 = document.querySelector(".i-8").value;
+  if (i8 !== "") {
+    let out = 0;
+    for (let key in a8) {
+      if (i8 == key) {
+        out = a8[key];
+        break;
+      }
+    }
+    document.querySelector(".out-8").innerHTML = out;
+  }
+  document.querySelector(".i-8").value = "";
+}
 
 document.querySelector(".b-8").onclick = f8;
 
@@ -172,7 +185,17 @@ let a9 = {
   d: 54,
 };
 
-function f9() {}
+function f9() {
+  let i9 = document.querySelector(".i-9").value;
+  let out = "";
+  for (let key in a9) {
+    if (a9[key] == i9) {
+      out += key + " ";
+    }
+  }
+  document.querySelector(".out-9").innerHTML = out;
+  document.querySelector(".i-9").value = "";
+}
 
 document.querySelector(".b-9").onclick = f9;
 
@@ -180,8 +203,13 @@ document.querySelector(".b-9").onclick = f9;
 // Давайте напишем полезную функцию f10, которая проверяет есть ли значение в ассоциативном массиве. Фукнция должна возвращать true если есть, и false если нет. Массив и значение передавать функции в качестве параметров.
 
 function f10(arr, val) {
-  //return true;
-  //return false;
+  for (let key in arr) {
+    if (arr[key] == val) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
 
 document.querySelector(".b-10").onclick = () => {
@@ -204,7 +232,16 @@ let a11 = {
   d: 54,
 };
 
-function f11() {}
+function f11() {
+  let i11 = document.querySelector(".i-11").value;
+  for (let key in a11) {
+    if (key == i11) {
+      delete a11[key];
+    }
+  }
+  f5(a11, ".out-11");
+  document.querySelector(".i-11").value = "";
+}
 
 document.querySelector(".b-11").onclick = f11;
 
@@ -219,7 +256,16 @@ let a12 = {
   d: 17,
 };
 
-function f12() {}
+function f12() {
+  let i12 = document.querySelector(".i-12").value;
+  for (let key in a12) {
+    if (a12[key] == i12) {
+      delete a12[key];
+    }
+  }
+  f5(a12, ".out-12");
+  document.querySelector(".i-12").value = "";
+}
 
 document.querySelector(".b-12").onclick = f12;
 
@@ -233,7 +279,15 @@ let a13 = {
   ivan: 6,
 };
 
-function f13() {}
+function f13() {
+  let sum = 0;
+  for (let key in a13) {
+    if (typeof a13[key] == "number") {
+      sum += a13[key];
+    }
+  }
+  document.querySelector(".out-13").innerHTML = sum;
+}
 
 document.querySelector(".b-13").onclick = f13;
 
@@ -248,7 +302,13 @@ let a14 = {
   ivan: [9, 10],
 };
 
-function f14() {}
+function f14() {
+  let out = "";
+  for (let key in a14) {
+    out += a14[key][0] + " ";
+  }
+  document.querySelector(".out-14").innerHTML = out;
+}
 
 document.querySelector(".b-14").onclick = f14;
 
@@ -264,7 +324,15 @@ let a15 = {
   ivan: [9, 10],
 };
 
-function f15() {}
+function f15() {
+  let out = "";
+  for (let key in a15) {
+    for (let i = 0; i < a15[key].length; i++) {
+      out += a15[key][i] + " ";
+    }
+  }
+  document.querySelector(".out-15").textContent = out;
+}
 
 document.querySelector(".b-15").onclick = f15;
 
