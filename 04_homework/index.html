@@ -1,23 +1,52 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
-</head>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+       <div class="wrapper">
+        <label for="city">выберите город
+          <select id="city">
+            <option value="511565">Пенза</option>
+            <option value="2643743">Лондон</option>
+            <option value="2968815">Париж</option>
+            <option value="703448">Киев</option>
+            <option value="2950159">Берлин</option>
+            <option value="524894">Москва</option>
+        <select>
+        </label>
 
-<body>
-    <div>
-        <p>Task 1. Создайте переменную a = 4. Используя конструкцию if проверьте то a == 4. Выведите сообщение в
-            консоль.</p>
-        <button class="task-1">button</button>
-    </div>
-    <hr>
+        <label for="lang">выберите язык
+          <select id="lang">
+            <option value="ru">Русский</option>
+            <option value="en">Английский</option>
+            <option value="fr">Францусский</option>
+            <option value="ua">Украинский</option>
+            <option value="de">Немецкий</option>
+        <select>
+        </label>
+
+        <label for="units">выберите единицы измерения
+          <select id="units">
+            <option value="metric">в градусах Цельсия</option>
+            <option value="imperial">в градусах Фаренгейта</option>
+            <option value="standard">в Кельвинах</option>
+        <select>
+        </label>
+      </div>
+       </div>
+      
+      <div class="container">
+        <button class="btn_getWeather">получить сведения о погоде</button>
+      </div>
+    </header>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>

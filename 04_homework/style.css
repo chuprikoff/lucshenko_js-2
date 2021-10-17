@@ -1,6 +1,20 @@
-html, body {
-    font-family: serif;
-}
+html,
 body {
-    margin: 20px;
+  font-family: serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background: rgb(99, 169, 216);
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-between;
 }
