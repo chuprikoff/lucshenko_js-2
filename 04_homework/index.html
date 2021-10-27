@@ -4,49 +4,102 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
     <header class="header">
       <div class="container">
-       <div class="wrapper">
-        <label for="city">выберите город
-          <select id="city">
+        <div class="header_wrapper">
+          <select
+            class="header_select"
+            id="lang"
+            title="выберите язык отображения некоторых элементов"
+          >
+            <option value="ru">Русский</option>
+            <option value="en">Английский</option>
+            <option value="fr">Францусский</option>
+            <option value="ua">Украинский</option>
+            <option value="de">Немецкий</option>
+          </select>
+
+          <select class="header_select" id="city" title="выберите город">
             <option value="511565">Пенза</option>
             <option value="2643743">Лондон</option>
             <option value="2968815">Париж</option>
             <option value="703448">Киев</option>
             <option value="2950159">Берлин</option>
             <option value="524894">Москва</option>
-        <select>
-        </label>
+          </select>
 
-        <label for="lang">выберите язык
-          <select id="lang">
-            <option value="ru">Русский</option>
-            <option value="en">Английский</option>
-            <option value="fr">Францусский</option>
-            <option value="ua">Украинский</option>
-            <option value="de">Немецкий</option>
-        <select>
-        </label>
-
-        <label for="units">выберите единицы измерения
-          <select id="units">
-            <option value="metric">в градусах Цельсия</option>
-            <option value="imperial">в градусах Фаренгейта</option>
-            <option value="standard">в Кельвинах</option>
-        <select>
-        </label>
-      </div>
-       </div>
-      
-      <div class="container">
-        <button class="btn_getWeather">получить сведения о погоде</button>
+          <select
+            class="header_select"
+            id="units"
+            title="выберите систему единиц измерения"
+          >
+            <option value="metric">Метрическая</option>
+            <option value="imperial">Имперская</option>
+            <option value="standard">Британская</option>
+          </select>
+        </div>
+        <button class="btn_getWeather" title="НАЖМИ">
+          Получить сведения о погоде
+        </button>
       </div>
     </header>
 
+    <main class="main_content">
+      <h2 id="name"></h2>
+      <hr />
+      <section class="temp">
+        <div class="temp_inner">
+          <h4 class="subtitle">Температура</h4>
+          <span id="temp"></span>
+          <span class="temp_unit">&#8451;</span>
+        </div>
+        <div class="temp_inner">
+          <h4 class="subtitle">Ощущается как</h4>
+          <span id="feels_like"></span>
+          <span class="temp_unit">&#8451;</span>
+        </div>
+      </section>
+      <hr />
+      <section class="clouds">
+        <h4 class="subtitle" id="description"></h4>
+        <div class="clouds_icon">
+          <img src="https://openweathermap.org/img/wn/04n@2x.png" />
+        </div>
+      </section>
+      <hr />
+      <section class="humidity_pressure">
+        <div>
+          <h4 class="subtitle">Влажность</h4>
+          <span id="humidity"></span>
+          <span>%</span>
+        </div>
+        <div>
+          <h4 class="subtitle">Давление</h4>
+          <span id="pressure"></span>
+          <span>мм рт. ст.</span>
+        </div>
+      </section>
+      <hr />
+      <section class="wind">
+        <h4 class="title">Ветер <span id="deg"></span></h4>
+        <div class="wind_inner">
+          <div>
+            <h4 class="subtitle">Скорость</h4>
+            <span id="speed"></span><span id="wind_units"></span>
+          </div>
+          <div>
+            <h4 class="subtitle">Порывы до</h4>
+            <span id="gust"></span><span id="wind_units"></span>
+          </div>
+        </div>
+      </section>
+      <!-- <hr /> -->
+      <section class="sun"></section>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>

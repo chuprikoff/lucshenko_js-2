@@ -5,3 +5,5 @@
 /*.**.gz
 /*.**.json
 /**/test.*.js
+/.vscode
+/*.txt
