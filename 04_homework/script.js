@@ -18,27 +18,33 @@ function getWeather() {
 }
 
 function showWeather(data) {
-  function temp_units() {
-    let wind_units_arr = document.querySelectorAll("#wind_units");
-    let temp_units_arr = document.querySelectorAll(".temp_unit");
-    for (let i = 0; i < temp_units_arr.length; i++) {
-      switch (units.value) {
-        case "metric":
-          wind_units_arr[i].textContent = " м/с";
-          temp_units_arr[i].innerHTML = " &#8451;";
-          break;
-        case "imperial":
-          temp_units_arr[i].innerHTML = " &#8457;";
-          wind_units_arr[i].textContent = " мил/ч";
-          break;
-        case "standard":
-          wind_units_arr[i].textContent = " м/с";
-          temp_units_arr[i].innerHTML = " &#8490;";
-          break;
-      }
+  function TempUnit() {
+    let wind_speed = document.querySelector("#wind_speed");
+    let wind_gust = document.querySelector("#wind_gust");
+    let temp_current = document.querySelector(".temp_current");
+    let temp_feels = document.querySelector(".temp_feels");
+    switch (units.value) {
+      case "metric":
+        wind_speed.textContent = " м/с";
+        wind_gust.textContent = " м/с";
+        temp_current.innerHTML = " &#8451;";
+        temp_feels.innerHTML = " &#8451;";
+        break;
+      case "imperial":
+        temp_feels.innerHTML = " &#8457;";
+        temp_current.innerHTML = " &#8457;";
+        wind_speed.textContent = " мил/ч";
+        wind_gust.textContent = " мил/ч";
+        break;
+      case "standard":
+        wind_speed.textContent = " м/с";
+        wind_gust.textContent = " м/с";
+        temp_current.innerHTML = " &#8490;";
+        temp_feels.innerHTML = " &#8490;";
+        break;
     }
   }
-  temp_units();
+  TempUnit();
   function degToCompass(num) {
     const val = Math.floor(num / 45 + 0.5);
     const arr = [
