@@ -87,6 +87,7 @@ const f7 = () => {
   document.querySelector(".out-7").textContent = +(
     i7.length == s7.size && i7.length > 6
   );
+  document.querySelector(".i-7").value = "";
 };
 
 document.querySelector(".b-7").onclick = f7;
@@ -164,7 +165,8 @@ let str12 =
   "The name conjures up visions of plum pudding and Christmas punch quaint coaching inns and cozy firesides but also of orphaned and starving children";
 
 const f12 = () => {
-  let s12 = new Set(str12.split(""));
+  let s12 = new Set(str12.replace(/\s/g, "").split("")); //буква - отдельный элемент массива
+  //let s12 = new Set(str12.split(""));                   //символ - отдельный элемент массива
   return s12;
 };
 
@@ -181,7 +183,20 @@ let str13 =
   "The name conjures up visions of plum pudding and Christmas punch quaint coaching inns and cozy firesides but also of orphaned and starving children";
 
 const f13 = () => {
-  // return
+  let obj13 = {};
+  let ar13 = str13.split(""); // с учетом регистра
+  // let ar13 = str13.toLowerCase().split("");  // без учета регистра
+  let s13 = new Set(ar13);
+  for (let item of s13) {
+    let num13 = 0;
+    for (let i = 0; i < ar13.length; i++) {
+      if (item == ar13[i]) {
+        num13++;
+      }
+      obj13[item] = num13;
+    }
+  }
+  return obj13;
 };
 
 document.querySelector(".b-13").onclick = () => {
