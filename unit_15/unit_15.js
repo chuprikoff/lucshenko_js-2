@@ -165,8 +165,14 @@ let str12 =
   "The name conjures up visions of plum pudding and Christmas punch quaint coaching inns and cozy firesides but also of orphaned and starving children";
 
 const f12 = () => {
-  let s12 = new Set(str12.replace(/\s/g, "").split("")); //буква - отдельный элемент массива
-  //let s12 = new Set(str12.split(""));                   //символ - отдельный элемент массива
+  let arr12 = [];
+  let s12 = new Set();
+  for (let item of str12) {
+    if (item !== " ") {
+      arr12.push(item);
+      s12.add(item);
+    }
+  }
   return s12;
 };
 
@@ -184,10 +190,12 @@ let str13 =
 
 const f13 = () => {
   let obj13 = {};
-  let ar13 = str13.split(""); // с учетом регистра
-  // let ar13 = str13.toLowerCase().split("");  // без учета регистра
-  let s13 = new Set(ar13);
-  for (let item of s13) {
+  let ar13 = [];
+  let s13 = new Set();
+
+  for (let item of str13) {
+    ar13.push(item);
+    s13.add(item);
     let num13 = 0;
     for (let i = 0; i < ar13.length; i++) {
       if (item == ar13[i]) {
