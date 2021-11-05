@@ -177,10 +177,13 @@ let a9 = [
 ];
 
 function t9() {
+  let n = a9.length;
+  // let a91 = [];
   a9.forEach((elem) => {
-    a9.push(elem.toLowerCase());
-    a9.shift();
+    a9 /*1*/.push(elem.toLowerCase());
+    // a9 = a91;
   });
+  a9.splice(0, n);
   return a9;
 }
 
