@@ -12,7 +12,7 @@ document.querySelector(".i-1").onkeydown = t1;
 /*  Дан input .i-2. Напишите функцию t2, которая по событию onkeypress выводит в out-2 числовой код символа (event.keyCode). */
 
 function t2(event) {
-  document.querySelector(".out-2").textContent += `${event.keyCode} `;
+  document.querySelector(".out-2").textContent += event.keyCode;
   console.log(event);
 }
 
@@ -24,7 +24,7 @@ document.querySelector(".i-2").onkeypress = t2;
 function t3(event) {
   document.querySelector(".out-3").textContent +=
     (event.keyCode < 47 || event.keyCode > 58) + " ";
-  console.log(event.keyCode);
+  console.log(event);
 }
 
 document.querySelector(".i-3").onkeypress = t3;
