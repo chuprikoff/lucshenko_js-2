@@ -128,14 +128,53 @@ document.querySelector(".div-11").addEventListener("touchstart", t11);
 const images = document.querySelectorAll(".img-12-min");
 let count = 0; // переменная, которая указывает на номер активного изображения в images
 
-const next = document.querySelectorAll(".next");
+const next = document.querySelector(".next");
 next.onclick = nextFunction;
 
-const prev = document.querySelectorAll(".prev");
+const prev = document.querySelector(".prev");
 prev.onclick = prevFunction;
 
-function nextFunction() {}
+const reset = document.querySelector(".reset");
+reset.onclick = resetFunction;
 
-function prevFunction() {}
+function nextFunction() {
+  images.forEach((elem, index) => {
+    if (elem.classList.contains("active-img")) {
+      elem.classList.remove("active-img");
+      count = index + 1;
+      if (count == images.length) {
+        count = 0;
+      }
+    }
+  });
+  document
+    .querySelector(".img-12-max")
+    .setAttribute("src", `img/${count + 1}.png`);
+  images[count].classList.add("active-img");
+}
+
+function prevFunction() {
+  images.forEach((elem, index) => {
+    if (elem.classList.contains("active-img")) {
+      elem.classList.remove("active-img");
+      count = index - 1;
+      if (count == -1) {
+        count = images.length - 1;
+      }
+    }
+  });
+  document
+    .querySelector(".img-12-max")
+    .setAttribute("src", `img/${count + 1}.png`);
+  images[count].classList.add("active-img");
+}
+
+function resetFunction() {
+  images.forEach((elem) => {
+    elem.classList.remove("active-img");
+  });
+  document.querySelector(".img-12-max").setAttribute("src", `img/1.png`);
+  images[0].classList.add("active-img");
+}
 
 // ваше событие здесь!!!
