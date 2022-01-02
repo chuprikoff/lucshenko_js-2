@@ -1,5 +1,6 @@
 /*.zip
 /app
+/app*
 /img
 /*/img
 !dz/img
