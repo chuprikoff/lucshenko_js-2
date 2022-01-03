@@ -3,9 +3,9 @@ const address = "http://getpost.itgid.info/index2.php";
 
 function request(method, elem, action, params) {
   console.log(params);
-  let xhttp = new XMLHttpRequest();
   let out = "";
   let elem_out = document.querySelector(elem);
+  let xhttp = new XMLHttpRequest();
   xhttp.addEventListener("load", function () {
     out = this.responseText;
     elem_out.textContent = out;
