@@ -2,13 +2,11 @@ const auth = "auth=7859d9d42a8834141d529577207c9596";
 const address = "http://getpost.itgid.info/index2.php";
 
 function request(method, elem, action, params) {
-  console.log(params);
-  let out = "";
-  let elem_out = document.querySelector(elem);
   let xhttp = new XMLHttpRequest();
+  let out = "";
   xhttp.addEventListener("load", function () {
     out = this.responseText;
-    elem_out.textContent = out;
+    document.querySelector(elem).textContent = out;
   });
   xhttp.open(method, `${address}?${auth}&action=${action}${params}`, true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
