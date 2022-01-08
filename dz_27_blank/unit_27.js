@@ -1,3 +1,58 @@
+const auth = "auth=7859d9d42a8834141d529577207c9596";
+const url = "http://getpost.itgid.info/index2.php";
+
+function objToString(obj) {
+  let string = "";
+  for (let key in obj) {
+    string += `&${key}=${obj[key]}`;
+  }
+  return string;
+}
+
+function request(strBody) {
+  let requestData = new Promise((resolve, reject) => {
+    fetch(`${url}?${auth}${strBody}`).then((data) => {
+      resolve(data.text());
+    });
+  });
+  return requestData;
+}
+
+function requestPost(strBody) {
+  let requestData = new Promise((resolve, reject) => {
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: `${auth}${strBody}`,
+    }).then((data) => {
+      resolve(data.text());
+    });
+  });
+  return requestData;
+}
+
+function requestPromis(elem, params1, params2, method) {
+  let strBody1 = objToString(params1);
+  let strBody2 = objToString(params2);
+
+  if (method == "POST") {
+    let requestData1 = requestPost(strBody1);
+    let requestData2 = requestPost(strBody2);
+    Promise.all([requestData1, requestData2]).then((value) => {
+      document.querySelector(elem).innerHTML = value;
+    });
+  } else {
+    let requestData1 = request(strBody1);
+    let requestData2 = request(strBody2);
+    Promise.all([requestData1, requestData2]).then((value) => {
+      document.querySelector(elem).innerHTML = value;
+    });
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////
 
 // Task 1 ============================================
 /* 
@@ -8,7 +63,16 @@
 */
 
 function t1() {
+  params1 = {
+    action: 1,
+  };
+  params2 = {
+    action: 2,
+    name: "Yuriy",
+  };
+  requestPromis(".out-1", params1, params2);
 }
+document.querySelector(".b-1").addEventListener("click", t1);
 
 // ваше событие здесь!!!
 
@@ -26,11 +90,22 @@ function t1() {
 */
 
 function t2() {
-
+  params1 = {
+    action: 3,
+    num1: 12,
+    num2: 56,
+  };
+  params2 = {
+    action: 4,
+    num1: 12,
+    num2: 56,
+  };
+  requestPromis(".out-2", params1, params2);
 }
 
-// ваше событие здесь!!!
+document.querySelector(".b-2").addEventListener("click", t2);
 
+// ваше событие здесь!!!
 
 // Task 3 ============================================
 /*  
@@ -46,11 +121,20 @@ function t2() {
                  */
 
 function t3() {
-
+  params1 = {
+    action: 5,
+  };
+  params2 = {
+    action: 6,
+    num1: 12,
+    num2: 56,
+  };
+  requestPromis(".out-3", params1, params2);
 }
 
-// ваше событие здесь!!!
+document.querySelector(".b-3").addEventListener("click", t3);
 
+// ваше событие здесь!!!
 
 // Task 4 ============================================
 /*  
@@ -66,8 +150,17 @@ function t3() {
 */
 
 function t4() {
-
+  params1 = {
+    action: 7,
+  };
+  params2 = {
+    action: 8,
+    year: 1974,
+  };
+  requestPromis(".out-4", params1, params2);
 }
+
+document.querySelector(".b-4").addEventListener("click", t4);
 
 // ваше событие здесь!!!
 
@@ -82,8 +175,17 @@ POST запрос на сайт http://getpost.itgid.info/index2.php. В кач�
 */
 
 function t5() {
-
+  params1 = {
+    action: 1,
+  };
+  params2 = {
+    action: 2,
+    name: "Yuriy",
+  };
+  requestPromis(".out-5", params1, params2, "POST");
 }
+
+document.querySelector(".b-5").addEventListener("click", t5);
 
 // ваше событие здесь!!!
 
@@ -103,11 +205,22 @@ function t5() {
 */
 
 function t6() {
-
+  params1 = {
+    action: 3,
+    num1: 12,
+    num2: 56,
+  };
+  params2 = {
+    action: 4,
+    num1: 12,
+    num2: 56,
+  };
+  requestPromis(".out-6", params1, params2, "POST");
 }
 
-// ваше событие здесь!!!
+document.querySelector(".b-6").addEventListener("click", t6);
 
+// ваше событие здесь!!!
 
 // Task 7 ============================================
 /*  
@@ -122,8 +235,18 @@ function t6() {
 */
 
 function t7() {
-
+  params1 = {
+    action: 5,
+  };
+  params2 = {
+    action: 6,
+    num1: 12,
+    num2: 56,
+  };
+  requestPromis(".out-7", params1, params2);
 }
+
+document.querySelector(".b-7").addEventListener("click", t7);
 
 // ваше событие здесь!!!
 
@@ -141,8 +264,16 @@ function t7() {
 */
 
 function t8() {
-
+  params1 = {
+    action: 7,
+  };
+  params2 = {
+    action: 8,
+    year: 1974,
+  };
+  requestPromis(".out-8", params1, params2, "POST");
 }
 
-// ваше событие здесь!!!
+document.querySelector(".b-8").addEventListener("click", t8);
 
+// ваше событие здесь!!!
